@@ -13,7 +13,7 @@ from logger import LogException
 
 # Create and configure logger
 log_format = '%(levelname)s %(asctime)s - %(message)s'
-log_file = 'G:/Self Projects/Crawling System/simple_crawler/logs/crawl.log'
+log_file = 'G:/Self Projects/crawling-system/simple_crawler/logs/crawl.log'
 logging.basicConfig(filename=log_file,
                     level=logging.DEBUG,
                     format=log_format,
@@ -145,7 +145,7 @@ def main():
                     manga = crawl(obj)
                     if manga is not None:
                         sent_producer(url=kafka_producer_url, data=manga)
-                        # export_json(manga, path='G:/Self Projects/Crawling System/simple_crawler/data')
+                        # export_json(manga, path='G:/Self Projects/crawling-system/simple_crawler/data')
                     time.sleep(random.randint(1, 5))
             time.sleep(random.randint(1, 5))
 
